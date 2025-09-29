@@ -124,3 +124,37 @@
     @apply bg-background text-foreground;
   }
 }
+/* src/app/globals.css */
+
+/*
+  FIX para o Popover dentro de um Dialog da Shadcn UI.
+  A biblioteca calcula um `transform` incorreto que joga o popover
+  para fora da tela. Esta regra força a remoção desse transform,
+  confiando apenas nas propriedades `top` e `left` para o posicionamento.
+*/
+/* Em src/app/globals.css */
+
+/*
+  FIX FORÇADO para o Popover dentro de um Dialog.
+  Anula os estilos inline incorretos calculados pela biblioteca
+  e força o calendário a aparecer centralizado na tela.
+*/
+/*
+  FIX DEFINITIVO para o Popover dentro de um Dialog.
+  Seleciona o wrapper (`[data-radix...]`) que :has() um filho 
+  com a nossa classe customizada (`.popover-in-dialog`) e
+  sobrescreve o transform incorreto.
+*/
+[data-radix-popper-content-wrapper]:has(.popover-in-dialog) {
+  /* Opção 1: Centralização perfeita (Recomendado) */
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+
+  /* Opção 2: Seus valores exatos (descomente se preferir) */
+  /*
+  top: 0 !important;
+  left: 0 !important;
+  transform: translate(50px, 50%) !important;
+  */
+}
