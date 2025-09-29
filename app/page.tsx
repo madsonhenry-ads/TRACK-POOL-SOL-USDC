@@ -22,7 +22,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4 py-6">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-3xl font-bold text-foreground">Liquidity Pool Tracker: BTC/USDC</h1>
+              <h1 className="text-3xl font-bold text-foreground">Liquidity Pool Tracker: SOL/USDC</h1>
               <p className="text-muted-foreground mt-1">Track your DeFi pool performance and profitability</p>
             </div>
             <div className="flex gap-3">
